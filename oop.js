@@ -10,7 +10,25 @@ Car.prototype.move = function() {
 
 
 
+function Van (name, loc) {
+	Car.call(this,name,loc);
+	Van.prototype.__proto__ = Car.prototype;
 
-var car = new Car("myCar", 12);
-car.move()
-console.log(car.name  + car.loc);
+}
+Van.prototype.something = function  () {
+	console.log("something!!")
+}
+
+
+
+
+var v = new Van("Audi",13);
+
+v.move();
+v.something();
+
+console.log(v instanceof Van)
+console.log(v instanceof Car)
+
+console.log(v.loc);
+console.log(v.name);
