@@ -12,9 +12,11 @@ Car.prototype.move = function() {
 
 function Van (name, loc) {
 	Car.call(this,name,loc);
-	Van.prototype.__proto__ = Car.prototype;
 
-}
+}	
+
+Van.prototype.__proto__ = Car.prototype;
+
 Van.prototype.something = function  () {
 	console.log("something!!")
 }
