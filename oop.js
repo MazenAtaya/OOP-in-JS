@@ -15,8 +15,8 @@ function Van (name, loc) {
 
 }	
 
-Van.prototype.__proto__ = Car.prototype;
-
+//Van.prototype.__proto__ = Car.prototype;
+Van.prototype = Object.create(Car.prototype);
 Van.prototype.something = function  () {
 	console.log("something!!")
 }
